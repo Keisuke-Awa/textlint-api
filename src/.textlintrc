@@ -1,5 +1,5 @@
 {
     "rules": {
-        "ja-no-abusage": true
+      "no-double-negative-ja": true
     }
 }
