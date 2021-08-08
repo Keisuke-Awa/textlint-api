@@ -1,18 +1,15 @@
-import { TextLintEngine } from "textlint";
-import fs from "fs";
+import express from "express";
+import bodyParser from "body-parser";
 
-const engine = new TextLintEngine();
+const app = express();
+const port = process.env.PORT || 8000;
 
-const testStr = fs.readFileSync("./test.txt", { encoding: "utf8" });
+import router from "./routes/v1/index.js";
 
-engine.executeOnText(testStr).then((results) => {
-  const messages = results[0].messages;
-  messages.forEach((message) => {
-    console.log(message);
-  });
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use("/api/v1/", router);
 
-  if (engine.isErrorResults(results)) {
-    const output = engine.formatResults(results);
-    console.log(output);
-  }
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
 });
