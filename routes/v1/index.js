@@ -5,7 +5,7 @@ import { proofreadText } from "../../lib/textlint.js";
 
 router.get("/", (req, res) => {
   res.json({
-    message: "Hello World！！！！！",
+    message: "Hello World！",
   });
 });
 
