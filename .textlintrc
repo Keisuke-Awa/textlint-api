@@ -1,6 +1,5 @@
 {
     "rules": {
-      "no-double-negative-ja": true,
       "prh": {
         "rulePaths" :["./prh.yml"]
       }
