@@ -13,3 +13,5 @@ app.use("/api/v1/", router);
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+export default app;
