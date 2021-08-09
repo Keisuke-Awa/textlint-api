@@ -5,10 +5,10 @@ import { proofreadText } from "../../lib/textlint.js";
 
 router.post("/proofread", (req, res) => {
   const text = req.body.text;
-  proofreadText(text).then((results) => {
+  proofreadText(text).then((resultMessages) => {
     res.json({
       requestText: text,
-      result: results,
+      resultMessages: resultMessages,
     });
   });
 });
