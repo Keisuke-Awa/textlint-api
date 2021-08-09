@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-import { proofreadText } from "../../lib/textlint.js";
+import { proofreadText } from "../../../lib/textlint.js";
 
 router.get("/", (req, res) => {
   res.json({
