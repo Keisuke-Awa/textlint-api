@@ -1,15 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-// import { proofreadText } from "../../lib/textlint.js";
-import { TextLintEngine } from "textlint";
-
-const engine = new TextLintEngine();
-
-async function proofreadText(text) {
-  const results = await engine.executeOnText(text);
-  return results[0].messages;
-}
+import { proofreadText } from "../../lib/textlint.js";
 
 router.get("/", (req, res) => {
   res.json({
